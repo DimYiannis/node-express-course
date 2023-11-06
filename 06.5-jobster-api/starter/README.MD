@@ -436,7 +436,7 @@ middleware/authentication.js
 
 ```js
 const payload = jwt.verify(token, process.env.JWT_SECRET);
-const testUser = payload.userId === '62eff8bcdb9af70b4155349d';
+const testUser = payload.userId === '65480bbe17857c09c46a1028';
 req.user = { userId: payload.userId, testUser };
 ```
 
