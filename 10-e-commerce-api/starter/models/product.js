@@ -26,7 +26,7 @@ const ProductSchema = new mongoose.Schema({
         required: [true, "Please provide product category"],
         enum: ["office", "kitchen","bedroom"],
       },
-      category: {
+      company: {
         type: String,
         required: [true, "Please providecompany"],
         enum: {
@@ -36,6 +36,7 @@ const ProductSchema = new mongoose.Schema({
       },
       colors: {
         type: [String],
+        default:['#222'],
         required: true,
       },
       featured: {
@@ -56,7 +57,7 @@ const ProductSchema = new mongoose.Schema({
         default:0,
       },
       user:{
-        type:mongoose.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref:'User',
         required:true,
       },
@@ -65,4 +66,4 @@ const ProductSchema = new mongoose.Schema({
   );
 
 
-  module.exports = mongoose.model("User", ProductSchema);
+  module.exports = mongoose.model("Product", ProductSchema);
